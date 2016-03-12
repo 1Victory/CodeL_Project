@@ -1,0 +1,29 @@
+﻿@model CodeL1.Models.QuizViewModel
+@{
+    ViewBag.Title = "Quiz";
+}
+
+@using (Html.BeginForm())
+{
+<h2>Quiz</h2>
+<table class="table table-condensed">
+
+@foreach (var question in Model.Questions)
+{
+    // Questions go here
+    <tr>
+        <th>@question.Text</th>
+        <th></th>
+    </tr>
+
+    foreach (var answer in question.Answers)
+    {
+        <tr>
+            <tr><td>@Html.RadioButtonFor(m => answer.Name, answer.Id)@answer.Name</td></tr>
+        </tr>
+        // do radio button stuff here
+    }
+}
+</table>
+    <button type="submit">Submit</button>
+}

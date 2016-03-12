@@ -1,0 +1,17 @@
+﻿@model  CodeL1.Context.OurPerson
+@{
+    ViewBag.Title = "Person";
+}
+
+<h2>Person</h2>
+
+@using (Html.BeginForm())
+{
+    <div>@Html.LabelFor(model => model.FirstName)</div>
+    <div>@Html.TextBoxFor(model => model.FirstName)</div>
+
+    <div>@Html.LabelFor(model => model.LastName)</div>
+    <div>@Html.TextBoxFor(model => model.LastName)</div>
+
+    <button type="submit">Submit</button>
+}
